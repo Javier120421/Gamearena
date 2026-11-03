@@ -1,0 +1,22 @@
+{
+  "name": "GameArena — Juega y compite",
+  "short_name": "GameArena",
+  "description": "Juega, compite y escala en el ranking.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090d18",
+  "theme_color": "#090d18",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "games",
+    "entertainment"
+  ]
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="GameArena 0.5: juega, compite y escala en el ranking.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>GameArena — Juega y compite</title>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#inicio" data-page="inicio"><span class="brand-mark">G</span><span>GAME<span class="brand-accent">ARENA</span></span></a>
+    <div class="side-label">MENÚ PRINCIPAL</div>
+    <nav class="side-nav" aria-label="Navegación principal">
+      <button class="nav-link active" data-page="inicio"><span>⌂</span> Inicio</button>
+      <button class="nav-link" data-page="juegos"><span>▣</span> Juegos</button>
+      <button class="nav-link" data-page="torneos"><span>♜</span> Torneos <i class="nav-dot"></i></button>
+      <button class="nav-link" data-page="ranking"><span>♛</span> Ranking</button>
+    </nav>
+    <div class="side-label side-label-spaced">TU ESPACIO</div>
+    <nav class="side-nav"><button class="nav-link" data-page="perfil"><span>◉</span> Mi perfil</button></nav>
+    <div class="sidebar-bottom">
+      <div class="season-card"><div class="season-top"><span class="live-dot"></span> TEMPORADA 01</div><strong>El comienzo</strong><p>Compite, suma puntos y alcanza la cima.</p><div class="season-progress"><span></span></div><small>Temporada inaugural</small></div>
+      <div class="user-mini"><div class="avatar" data-user-initial>I</div><div class="user-text"><b data-user-name>Invitado</b><small id="user-sub">Inicia sesión para guardar tus marcas</small></div><button class="mini-btn" data-show-guest data-open-auth="login">Entrar</button><button class="mini-btn" data-show-logged data-logout hidden>Salir</button></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="mobile-brand"><span class="brand-mark">G</span> GAME<span class="brand-accent">ARENA</span></div>
+      <div class="breadcrumb"><span>Plataforma</span><b>/</b><strong id="page-title">Inicio</strong></div>
+      <div class="top-actions"><button class="icon-button" aria-label="Notificaciones">♧<i></i></button><button class="profile-chip" data-page="perfil"><span class="avatar small" data-user-initial>I</span><span data-user-name>Invitado</span><b>⌄</b></button></div>
+    </header>
+
+    <section class="page active" id="page-inicio">
+      <div class="welcome-row"><div><div class="eyebrow"><span class="live-dot"></span> TU ARENA TE ESPERA</div><h1>¡Que comience<br class="mobile-break"> la competencia!</h1><p class="muted">Juega, supera tus marcas y demuestra de qué estás hecho.</p></div><div class="welcome-badge"><span>✦</span><div><b>Temporada 01</b><small>La aventura comienza aquí</small></div></div></div>
+      <div class="hero-card"><div class="hero-content"><div class="pill"><span class="live-dot"></span> TORNEO DESTACADO</div><h2>Reto de<br><em>la semana</em></h2><p>Demuestra tu habilidad. Consigue la mejor puntuación y escala posiciones en el ranking.</p><div class="hero-meta"><span>◷ Toda la semana</span><span>♛ Ranking abierto</span><span>◎ Gratis</span></div><button class="primary-button" data-page="torneos">Explorar torneos <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-cube">✦</div><div class="floating-chip chip-one">+250 XP</div><div class="floating-chip chip-two">TOP 10</div></div></div>
+      <div class="section-heading"><div><div class="eyebrow">EMPIEZA A JUGAR</div><h2>Juegos populares</h2></div><button class="text-button" data-page="juegos">Ver todos →</button></div>
+      <div class="game-grid">
+        <article class="game-card game-purple"><div class="game-visual"><span class="game-symbol">蛇</span><span class="game-tag">HABILIDAD</span></div><div class="game-info"><div><h3>Snake Rush</h3><p>Supera tu propio récord</p></div><button class="play-button" data-game="snake">Jugar →</button></div></article>
+        <article class="game-card game-orange" data-category="habilidad"><div class="game-visual"><span class="game-symbol">🎯</span><span class="game-tag">NIVELES INFINITOS</span></div><div class="game-info"><div><h3>Knife Rush</h3><p>Clava cuchillos y supera niveles</p></div><button class="play-button" data-game="knife">Jugar →</button></div></article>
+        <article class="game-card game-blue"><div class="game-visual"><span class="game-symbol">▦</span><span class="game-tag">MEMORIA</span></div><div class="game-info"><div><h3>Memory Match</h3><p>Entrena tu concentración</p></div><button class="play-button" data-coming="Memory Match">Pronto</button></div></article>
+        <article class="game-card game-orange"><div class="game-visual"><span class="game-symbol">?</span><span class="game-tag">TRIVIA</span></div><div class="game-info"><div><h3>Quiz Battle</h3><p>¿Cuánto sabes?</p></div><button class="play-button" data-coming="Quiz Battle">Pronto</button></div></article>
+      </div>
+      <div class="lower-grid">
+        <section class="panel"><div class="section-heading compact"><div><div class="eyebrow">LOS MEJORES</div><h2>Ranking semanal</h2></div><button class="text-button" data-page="ranking">Ver ranking →</button></div>
+          <div class="ranking-list">
+            <div class="rank-row"><span class="rank-number gold">01</span><div class="rank-avatar av1">K</div><div class="rank-user"><b>KingPlayer</b><small>Colombia</small></div><strong>2.450 <small>XP</small></strong></div>
+            <div class="rank-row"><span class="rank-number silver">02</span><div class="rank-avatar av2">M</div><div class="rank-user"><b>MaxGG</b><small>México</small></div><strong>2.180 <small>XP</small></strong></div>
+            <div class="rank-row"><span class="rank-number bronze">03</span><div class="rank-avatar av3">L</div><div class="rank-user"><b>LegendX</b><small>Argentina</small></div><strong>1.960 <small>XP</small></strong></div>
+          </div>
+        </section>
+        <section class="panel activity-panel"><div class="eyebrow">TU PROGRESO</div><h2>Tu camino empieza hoy</h2><div class="progress-icon">✧</div><p class="muted">Juega tu primera partida para comenzar a sumar experiencia y desbloquear logros.</p><button class="secondary-button" data-page="juegos">Elegir un juego</button></section>
+      </div>
+    </section>
+
+    <section class="page" id="page-juegos">
+      <div class="page-intro"><div class="eyebrow">CATÁLOGO</div><h1>Explora los juegos</h1><p class="muted">Encuentra tu favorito y demuestra tu habilidad.</p></div>
+      <div class="filter-row"><button class="filter active" data-filter="todos">Todos</button><button class="filter" data-filter="habilidad">Habilidad</button><button class="filter" data-filter="memoria">Memoria</button><button class="filter" data-filter="trivia">Trivia</button></div>
+      <div class="game-grid catalog-grid">
+        <article class="game-card game-purple" data-category="habilidad"><div class="game-visual"><span class="game-symbol">蛇</span><span class="game-tag">HABILIDAD</span></div><div class="game-info"><div><h3>Snake Rush</h3><p>Supera tu propio récord</p></div><button class="play-button" data-game="snake">Jugar →</button></div></article>
+        <article class="game-card game-orange" data-category="habilidad"><div class="game-visual"><span class="game-symbol">🎯</span><span class="game-tag">NIVELES INFINITOS</span></div><div class="game-info"><div><h3>Knife Rush</h3><p>Clava cuchillos y supera niveles</p></div><button class="play-button" data-game="knife">Jugar →</button></div></article>
+        <article class="game-card game-blue" data-category="memoria"><div class="game-visual"><span class="game-symbol">▦</span><span class="game-tag">MEMORIA</span></div><div class="game-info"><div><h3>Memory Match</h3><p>Entrena tu concentración</p></div><button class="play-button" data-coming="Memory Match">Próximamente</button></div></article>
+        <article class="game-card game-orange" data-category="trivia"><div class="game-visual"><span class="game-symbol">?</span><span class="game-tag">TRIVIA</span></div><div class="game-info"><div><h3>Quiz Battle</h3><p>¿Cuánto sabes?</p></div><button class="play-button" data-coming="Quiz Battle">Próximamente</button></div></article>
+      </div>
+      <div class="notice"><b>Próximamente:</b> nuevos desafíos, temporadas y más juegos competitivos.</div>
+    </section>
+
+    <section class="page" id="page-snake">
+      <div class="page-intro"><div class="eyebrow">JUEGO DE HABILIDAD · TEMPORADA 01</div><h1>Snake Rush</h1><p class="muted">Come los orbes, crece y consigue la mejor puntuación.</p></div>
+      <div class="snake-layout">
+        <section class="snake-panel">
+          <div class="snake-topline"><span class="game-live"><i></i> <span id="snake-mode">PARTIDA LOCAL</span></span><button class="back-link" data-page="juegos">← Volver a juegos</button></div>
+          <div class="snake-stats"><div><small>PUNTUACIÓN</small><b id="snake-score">0</b></div><div><small>RÉCORD PERSONAL</small><b id="snake-best">0</b></div><div><small>NIVEL</small><b id="snake-level">1</b></div></div>
+          <div class="canvas-wrap"><canvas id="snake-canvas" width="400" height="400" aria-label="Tablero del juego Snake Rush"></canvas><div class="game-overlay" id="snake-overlay"><div class="overlay-symbol">蛇</div><h2 id="overlay-title">¿Listo para jugar?</h2><p id="overlay-text">Usa las flechas, WASD o desliza el dedo sobre el tablero.</p><button class="primary-button" id="snake-start">Comenzar partida <span>→</span></button></div></div>
+          <div class="snake-controls"><button class="control-btn" data-dir="up" aria-label="Arriba">▲</button><div><button class="control-btn" data-dir="left" aria-label="Izquierda">◀</button><button class="control-btn" data-dir="down" aria-label="Abajo">▼</button><button class="control-btn" data-dir="right" aria-label="Derecha">▶</button></div></div>
+          <div class="snake-actions"><button class="secondary-button" id="snake-pause" disabled>Pausar</button><button class="secondary-button" id="snake-restart">Reiniciar</button></div>
+        </section>
+        <aside class="snake-info">
+          <div class="panel"><div class="eyebrow">CÓMO JUGAR</div><h2>Domina el tablero</h2><ul class="instructions"><li>Usa las flechas, WASD o desliza el dedo sobre el tablero.</li><li>Cada 5 orbes subes de nivel: la serpiente va más rápido y desde el nivel 3 aparecen muros.</li><li>Los orbes dan más puntos en niveles altos. La estrella dorada vale 50, pero desaparece pronto.</li><li>No choques contra los bordes, los muros ni contigo mismo.</li></ul></div>
+          <div class="panel xp-panel"><div class="eyebrow">TU OBJETIVO</div><div class="target-icon">✦</div><h2>Supera tu récord</h2><p class="muted">Tu mejor puntuación se guarda en este dispositivo. Si inicias sesión, cada partida también se guarda en tu cuenta y compite en el ranking.</p></div>
+        </aside>
+      </div>
+    </section>
+
+<section class="page" id="page-knife">
+ <div class="page-intro"><div class="eyebrow">NUEVO · ARCADE</div><h1>🎯 Knife Rush</h1><p class="muted">Niveles infinitos, jefes cada 5 niveles y giros cada vez más locos. ¿Hasta dónde llegarás?</p></div>
+ <div class="knife-layout"><section class="snake-panel">
+ <div class="snake-topline"><span class="game-live"><i></i> <span id="knife-mode">PARTIDA LOCAL</span></span><button class="back-link" data-page="juegos">← Volver al catálogo</button></div>
+ <div class="snake-stats"><div><small>NIVEL</small><b id="knife-level">1</b></div><div><small>PUNTOS</small><b id="knife-score">0</b></div><div><small>RÉCORD</small><b id="knife-best">0</b></div></div>
+ <div class="knife-stage"><canvas id="knife-canvas" width="420" height="510" aria-label="Juego Knife Rush: toca para lanzar un cuchillo"></canvas><div class="game-overlay" id="knife-overlay"><div class="overlay-symbol">🎯</div><h2 id="knife-title">Knife Rush</h2><p id="knife-message">Toca o haz clic para lanzar cuchillos. Evita los que ya están clavados.</p><button class="primary-button" id="knife-start">Comenzar partida →</button></div></div>
+ <div class="snake-actions"><button class="primary-button" id="knife-throw">⚡ Lanzar cuchillo</button><button class="secondary-button" id="knife-restart">Reiniciar</button></div>
+ <p class="muted" style="text-align:center">En computador también puedes lanzar con la barra espaciadora.</p>
+ </section><aside class="snake-info"><section class="panel"><div class="eyebrow">CÓMO JUGAR</div><h2>Precisión y reflejos</h2><p><b>Niveles infinitos.</b> Cada nivel trae más cuchillos, más obstáculos y un giro nuevo: oleaje, reversa, frenazo, turbo y caos.</p><p>Cada 5 niveles aparece un <b>jefe</b> con rueda de metal y bonificación de 100 puntos. Las manzanas valen +25.</p><p>Los niveles son iguales para todos, así el ranking es justo.</p></section><section class="panel"><div class="eyebrow">RANKING ONLINE</div><h2>Top Knife Rush</h2><div id="knife-ranking">Cargando clasificación…</div></section></aside></div>
+ </section>
+    <section class="page" id="page-torneos">
+      <div class="page-intro"><div class="eyebrow">COMPITE Y SUPÉRATE</div><h1>Torneos</h1><p class="muted">Participa en competencias gratuitas y escala en la clasificación.</p></div>
+      <div class="tournament-feature"><div><span class="pill"><span class="live-dot"></span> INSCRIPCIONES ABIERTAS</span><h2>Reto de la semana</h2><p>Una nueva oportunidad para entrar al top. Juega, registra tu marca y compite.</p><div class="hero-meta"><span>◎ Entrada gratuita</span><span>◷ Finaliza el domingo</span></div><button class="primary-button" data-game="snake">Jugar Snake Rush →</button></div><div class="trophy">🏆</div></div>
+      <div class="section-heading"><div><div class="eyebrow">CALENDARIO</div><h2>Competencias disponibles</h2></div></div>
+      <div class="tournament-row"><div class="tourney-icon purple-icon">蛇</div><div class="tourney-details"><b>Snake Rush Weekly</b><small>Mejor puntuación · Individual</small></div><span class="status">Abierto</span><button class="secondary-button small-button" data-game="snake">Jugar</button></div>
+      <div class="tournament-row"><div class="tourney-icon blue-icon">▦</div><div class="tourney-details"><b>Memory Challenge</b><small>Menor tiempo · Individual</small></div><span class="status soon">Próximamente</span><button class="secondary-button small-button" disabled>Pronto</button></div>
+    </section>
+
+    <section class="page" id="page-ranking">
+      <div class="page-intro"><div class="eyebrow">LOS QUE MARCAN LA DIFERENCIA</div><h1>Ranking global</h1><p class="muted">Cada partida cuenta. Cada punto te acerca a la cima.</p></div>
+      <div class="ranking-tabs"><button class="filter active">Global</button><button class="filter">Colombia</button><button class="filter">Por juego</button></div>
+      <section class="panel full-panel"><div class="ranking-list full-ranking" id="ranking-live" hidden></div><div class="ranking-list full-ranking" id="ranking-demo">
+        <div class="rank-row"><span class="rank-number gold">01</span><div class="rank-avatar av1">K</div><div class="rank-user"><b>KingPlayer</b><small>🇨🇴 Colombia · Nivel 12</small></div><strong>2.450 <small>XP</small></strong></div>
+        <div class="rank-row"><span class="rank-number silver">02</span><div class="rank-avatar av2">M</div><div class="rank-user"><b>MaxGG</b><small>🇲🇽 México · Nivel 10</small></div><strong>2.180 <small>XP</small></strong></div>
+        <div class="rank-row"><span class="rank-number bronze">03</span><div class="rank-avatar av3">L</div><div class="rank-user"><b>LegendX</b><small>🇦🇷 Argentina · Nivel 9</small></div><strong>1.960 <small>XP</small></strong></div>
+        <div class="rank-row"><span class="rank-number">04</span><div class="rank-avatar av4">N</div><div class="rank-user"><b>NinjaPlay</b><small>🇵🇪 Perú · Nivel 8</small></div><strong>1.720 <small>XP</small></strong></div>
+        <div class="rank-row"><span class="rank-number">05</span><div class="rank-avatar av5">S</div><div class="rank-user"><b>Shadow</b><small>🇨🇴 Colombia · Nivel 7</small></div><strong>1.540 <small>XP</small></strong></div>
+      </div></section><p class="demo-note">Clasificación de demostración: estos jugadores y puntajes son datos ficticios.</p>
+    </section>
+
+    <section class="page" id="page-perfil">
+      <div class="page-intro"><div class="eyebrow">TU IDENTIDAD GAMER</div><h1>Mi perfil</h1><p class="muted">Tu progreso y tus logros en GameArena.</p></div>
+      <div class="profile-card"><div class="profile-avatar" data-user-initial>I</div><div><h2 id="profile-title">Invitado</h2><p class="muted" id="profile-sub">Entra para ver tu perfil y guardar tus puntuaciones</p><span class="level-pill">NIVEL 1 · NOVATO</span></div><div class="profile-xp"><b id="profile-xp">0 XP</b><small>Mejor puntuación</small></div></div>
+      <section class="panel auth-cta" data-show-guest><div class="eyebrow">TU CUENTA</div><h2>Guarda tu progreso</h2><p class="muted">Crea una cuenta gratis para guardar tus puntuaciones y aparecer en el ranking online.</p><div class="cta-row"><button class="primary-button" data-open-auth="registro">Crear cuenta →</button><button class="secondary-button" data-open-auth="login">Ya tengo cuenta</button></div></section>
+      <section class="panel" data-show-logged hidden><div class="eyebrow">EDITAR PERFIL</div><form id="profile-form" class="auth-form inline-form"><label>Nombre de jugador<input id="profile-username" maxlength="20" required></label><label>País<input id="profile-country" maxlength="40" required></label><button class="primary-button" type="submit">Guardar</button><p id="profile-msg" class="form-msg" role="status"></p></form><button class="secondary-button logout-btn" data-logout>Cerrar sesión</button></section>
+      <div class="stats-grid"><div class="stat-card"><small>PARTIDAS</small><b id="profile-games">0</b></div><div class="stat-card"><small>VICTORIAS</small><b>0</b></div><div class="stat-card"><small>MEJOR PUESTO</small><b>—</b></div><div class="stat-card"><small>LOGROS</small><b>0</b></div></div>
+      <section class="panel"><div class="eyebrow">PRÓXIMO OBJETIVO</div><h2>Primera partida</h2><p class="muted">Completa una partida para comenzar a construir tu historial.</p><button class="primary-button" data-page="juegos">Jugar ahora →</button></section>
+    </section>
+    <footer>© 2026 GameArena · Hecho para competir <span>Prototipo 0.3</span></footer>
+  </main>
+</div>
+<nav class="mobile-nav" aria-label="Navegación móvil">
+  <button class="active" data-page="inicio"><span>⌂</span><small>Inicio</small></button><button data-page="juegos"><span>▣</span><small>Juegos</small></button><button data-page="torneos"><span>♜</span><small>Torneos</small></button><button data-page="ranking"><span>♛</span><small>Ranking</small></button><button data-page="perfil"><span>◉</span><small>Perfil</small></button>
+</nav>
+<dialog id="auth-modal" class="auth-modal" aria-labelledby="auth-title">
+  <button class="auth-close" id="auth-close" aria-label="Cerrar">✕</button>
+  <div class="eyebrow">GAMEARENA</div><h2 id="auth-title">Inicia sesión</h2>
+  <div class="auth-tabs"><button type="button" class="filter active" data-auth-mode="login">Ingresar</button><button type="button" class="filter" data-auth-mode="registro">Registrarme</button></div>
+  <form id="auth-form" class="auth-form">
+    <label id="auth-username-wrap" hidden>Nombre de jugador<input id="auth-username" maxlength="20" autocomplete="username" placeholder="Ej: KingPlayer"></label>
+    <label>Correo<input id="auth-email" type="email" required autocomplete="email" placeholder="tu@correo.com"></label>
+    <label>Contraseña<input id="auth-password" type="password" required minlength="6" autocomplete="current-password" placeholder="Mínimo 6 caracteres"></label>
+    <button class="primary-button" id="auth-submit" type="submit">Entrar</button>
+    <p id="auth-msg" class="form-msg" role="status"></p>
+  </form>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+<script src="vendor/supabase.js"></script>
+<script src="supabase-config.js"></script>
+<script src="supabase-client.js"></script>
+<script src="auth.js"></script>
+<script src="scores.js"></script>
+<script src="snake.js"></script>
+<script src="knife.js"></script>
+</body>
+</html>
